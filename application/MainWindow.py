@@ -1,7 +1,7 @@
 import tkinter as Tk
 from MainWindows import SearchWindow as Srw,\
                         EditAddWindow as Eaw,\
-                        JobpageWindow as Jpw
+                        CustomerWindow as Cuw
 
 
 class MainWindow(Tk.Frame):
@@ -9,14 +9,14 @@ class MainWindow(Tk.Frame):
         Tk.Frame.__init__(self, parent, **kwargs)
         self.SearchWindow = Srw.SearchWindow(self)
         self.EditAddWindow = Eaw.EditAddWindow(self)
-        self.JobpageWindow = Jpw.JobpageWindow(self)
+        self.CustomerWindow = Cuw.CustomerWindow(self)
 
     def clear_main_window(self):
         for widget in self.winfo_children():
             widget.destroy()
         self.SearchWindow = Srw.SearchWindow(self)
         self.EditAddWindow = Eaw.EditAddWindow(self)
-        self.JobpageWindow = Jpw.JobpageWindow(self)
+        self.CustomerWindow = Cuw.CustomerWindow(self)
 
     def display_searchpage(self, search=None):
         self.clear_main_window()
@@ -32,10 +32,8 @@ class MainWindow(Tk.Frame):
         self.EditAddWindow.edit_add()
         self.EditAddWindow.grid(padx=5, pady=5)
 
-    def display_jobpage(self, customer):
+    def display_customerpage(self, customer):
         self.clear_main_window()
-        self.JobpageWindow.generate_jobpage(customer)
-        self.JobpageWindow.update_job_information(customer)
-        self.JobpageWindow.display_job_notes(customer)
-        self.JobpageWindow.display_tests(customer)
-        self.JobpageWindow.grid(padx=5, pady=5)
+        self.CustomerWindow.generate_customerpage(customer)
+        self.CustomerWindow.display_personal_notes(customer)
+        self.CustomerWindow.grid(padx=5, pady=5)

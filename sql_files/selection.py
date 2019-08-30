@@ -44,7 +44,7 @@ class Selection(Connector):
             return self.connector(query, condition)
 
     def select_latest_people_notes(self, people_id, print_view=None):
-        query = "SELECT * FROM cannajobs_test_notes WHERE people_id = (?) ORDER BY id DESC LIMIT 1 "
+        query = "SELECT * FROM people_notes_table WHERE people_id = (?) ORDER BY id DESC LIMIT 1 "
         if print_view:
             for item in self.connector(query, people_id):
                 print(item)

@@ -96,7 +96,7 @@ class SearchWindow(Tk.Frame):
             if (first_customer_row % 2) == 1:
                 Tk.Button(self.all_people_display_frame,
                           text=name,
-                          command=lambda item=item: self.parent.display_jobpage(item),
+                          command=lambda item=item: self.parent.display_customerpage(item),
                           highlightbackground="#e0fcf4",
                           font=self.search_table_results_font,
                           bg="#e0fcf4").grid(row=first_customer_row,
@@ -123,7 +123,7 @@ class SearchWindow(Tk.Frame):
             else:
                 Tk.Button(self.all_people_display_frame,
                           text=name,
-                          command=lambda item=item: self.parent.display_jobpage(item),
+                          command=lambda item=item: self.parent.display_customerpage(item),
                           fg='#613a3a',
                           highlightbackground="#e0fcf4",
                           font=self.search_table_results_font,
