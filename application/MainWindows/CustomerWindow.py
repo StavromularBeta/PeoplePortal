@@ -129,12 +129,12 @@ class CustomerWindow(Tk.Frame):
             bummer_note = "Add notes here."
             self.organization_notes.insert('end-1c', bummer_note)
         Tk.Label(self.notes_for_organization_frame,
-                 text="Organization Notes",
+                 text=job[1] + " Notes",
                  bg="#eceae6",
                  fg='#f47b74',
                  font=self.title_font).grid(row=0, column=0, sticky=Tk.W)
         Tk.Button(self.notes_for_organization_frame,
-                  text="Update Notes",
+                  text="Update " + job[1] + " Notes",
                   bg="#eceae6",
                   highlightbackground='#eceae6',
                   font=self.regular_font,
