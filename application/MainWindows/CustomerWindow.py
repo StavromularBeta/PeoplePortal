@@ -16,24 +16,26 @@ class CustomerWindow(Tk.Frame):
         Tk.Frame.__init__(self, parent, **kwargs)
         self.parent = parent
         self.config(bg="#eceae6")
-        self.notes_for_person_frame = Tk.Frame(self, bg="#eceae6")
-        self.notes_for_organization_frame = Tk.Frame(self, bg='#eceae6')
-        self.person_notes = Tk.Text(self.notes_for_person_frame,
-                                    borderwidth=1,
-                                    width=65,
-                                    height=20,
-                                    wrap="word")
-        self.organization_notes = Tk.Text(self.notes_for_organization_frame,
-                                          borderwidth=1,
-                                          width=65,
-                                          height=20,
-                                          wrap="word")
         self.title_font = tkFont.Font(size=18, weight='bold')
         self.regular_font = tkFont.Font(size=12, weight='bold')
         self.basic_information_window = Tk.Frame(self, bg="#eceae6")
         self.person_font = tkFont.Font(size=24, weight='bold')
         self.selection = selection.Selection()
         self.addel = addel.AdDel()
+        self.notes_for_person_frame = Tk.Frame(self, bg="#eceae6")
+        self.notes_for_organization_frame = Tk.Frame(self, bg='#eceae6')
+        self.person_notes = Tk.Text(self.notes_for_person_frame,
+                                    borderwidth=1,
+                                    width=55,
+                                    height=20,
+                                    font=self.regular_font,
+                                    wrap="word")
+        self.organization_notes = Tk.Text(self.notes_for_organization_frame,
+                                          borderwidth=1,
+                                          width=55,
+                                          height=20,
+                                          font=self.regular_font,
+                                          wrap="word")
 
     def clear_customer_window(self):
         for widget in self.winfo_children():
