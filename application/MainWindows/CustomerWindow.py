@@ -15,14 +15,14 @@ class CustomerWindow(Tk.Frame):
     def __init__(self, parent, **kwargs):
         Tk.Frame.__init__(self, parent, **kwargs)
         self.parent = parent
-        self.notes_for_person_frame = Tk.Frame(self, borderwidth=1, relief='solid')
+        self.notes_for_person_frame = Tk.Frame(self)
         self.person_notes = Tk.Text(self.notes_for_person_frame,
                                     borderwidth=1,
                                     width=65,
                                     height=20,
                                     wrap="word")
         self.title_font = tkFont.Font(size=16, weight='bold')
-        self.basic_information_window = Tk.Frame(self, borderwidth=1, relief='solid')
+        self.basic_information_window = Tk.Frame(self)
         self.person_font = tkFont.Font(size=16, weight='bold')
         self.selection = selection.Selection()
         self.addel = addel.AdDel()
@@ -30,8 +30,8 @@ class CustomerWindow(Tk.Frame):
     def clear_customer_window(self):
         for widget in self.winfo_children():
             widget.destroy()
-        self.basic_information_window = Tk.Frame(self, borderwidth=1, relief='solid')
-        self.notes_for_person_frame = Tk.Frame(self, borderwidth=1, relief='solid')
+        self.basic_information_window = Tk.Frame(self)
+        self.notes_for_person_frame = Tk.Frame(self)
         self.person_notes = Tk.Text(self.notes_for_person_frame,
                                     borderwidth=1,
                                     width=65,
@@ -47,11 +47,11 @@ class CustomerWindow(Tk.Frame):
                                            ipadx=2,
                                            ipady=2)
         Tk.Label(self.basic_information_window,
-                 text="Name: " + str(customer[1]),
+                 text="Named: " + str(customer[1]),
                  font=self.person_font).grid(row=1, column=0, sticky=Tk.W)
         Tk.Button(self.basic_information_window,
-                  text="Delete Job",
-                  command=lambda: self.delete_job(customer[0]).grid(row=1, column=3, sticky=Tk.W))
+                  text="Delete Entry",
+                  command=lambda: self.delete_job(customer[0])).grid(row=1, column=1, pady=5, sticky=Tk.W)
         Tk.Label(self.basic_information_window, text="Type: " + str(customer[2])).grid(row=2, column=0, sticky=Tk.W)
         Tk.Label(self.basic_information_window, text="Organization: " + str(customer[3])).grid(row=4, column=0, sticky=Tk.W)
         Tk.Label(self.basic_information_window, text="Client Since: " + str(customer[4])).grid(row=5, column=0, sticky=Tk.W)
@@ -71,6 +71,7 @@ class CustomerWindow(Tk.Frame):
                                                                                                                  pady=5,
                                                                                                                  sticky=Tk.W)
         self.person_notes.grid(row=1, column=0, sticky=Tk.W, padx=2, pady=2)
+        Tk.Canvas(self, width=1100, height=600, bg="#e0fcf4", highlightbackground="#e0fcf4").grid(row=4)
 
     def delete_job(self, id):
         self.addel.delete_person((id,))

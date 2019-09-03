@@ -28,7 +28,7 @@ class Selection(Connector):
             return self.connector(query)
 
     def select_all_from_table_descending(self, table_number, print_view=None):
-        query = "SELECT * FROM " + self.table_names[table_number] + " ORDER BY id DESC"
+        query = "SELECT * FROM " + self.table_names[table_number] + " ORDER BY name"
         if print_view:
             for item in self.connector(query):
                 print(item)

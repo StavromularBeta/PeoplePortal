@@ -14,7 +14,7 @@ class NavigationBar(Tk.Frame):
                                   command=self.parent.MainWindow.display_searchpage,
                                   font=self.nav_bar_button_font)
         edit_add_button = Tk.Button(self,
-                                    text="Enter\nNew Person",
+                                    text="Enter New\n Customers",
                                     command=self.parent.MainWindow.display_editaddpage,
                                     font=self.nav_bar_button_font)
         search_button.grid(row=0, padx=5, pady=5)
