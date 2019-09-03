@@ -39,7 +39,7 @@ class EditAddWindow(Tk.Frame):
                                    highlightbackground="#eceae6")
         self.org_entry = Tk.Entry(self.add_new_person_frame,
                                   highlightbackground="#eceae6")
-        self.filler_canvas = Tk.Canvas(self, width=1100, height=600, bg="#eceae6", highlightbackground="#eceae6")
+        self.filler_canvas = Tk.Canvas(self, width=1120, height=600, bg="#eceae6", highlightbackground="#eceae6")
 
     def edit_add(self):
         new_job_entry_frame = self.generate_new_person_frame()

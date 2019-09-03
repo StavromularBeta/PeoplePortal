@@ -22,6 +22,6 @@ class MainApplication(Tk.Frame):
 
 
 root = Tk.Tk()
-root.geometry('1200x900')
+root.geometry('1220x900')
 MainApplication(root).grid()
 root.mainloop()

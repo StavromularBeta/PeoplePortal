@@ -50,3 +50,11 @@ class Selection(Connector):
                 print(item)
         else:
             return self.connector(query, people_id)
+
+    def get_id_of_organization(self, organization_name, print_view=None):
+        query = "SELECT * FROM people_table WHERE name = (?) ORDER BY id DESC LIMIT 1"
+        if print_view:
+            for item in self.connector(query, organization_name):
+                print(item)
+        else:
+            return self.connector(query, organization_name)

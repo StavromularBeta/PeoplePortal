@@ -155,7 +155,7 @@ class SearchWindow(Tk.Frame):
     def search_people(self):
         self.search_frame = Tk.Frame(self, bg='#eceae6')
         Tk.Label(self.search_frame,
-                 text="Search People",
+                 text="Search Customers",
                  font=self.search_table_field_font,
                  fg="#f47b74",
                  bg="#eceae6").grid(row=0, column=0)
